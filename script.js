@@ -52,6 +52,7 @@ function initFormValidation() {
     const emailError = document.getElementById('email-error');
     const nameError = document.getElementById('name-error');
     const messageError = document.getElementById('message-error');
+    const recaptchaError = document.getElementById('recaptcha-error');
     
     // リアルタイムバリデーション
     if (emailInput) {
@@ -98,8 +99,9 @@ function initFormValidation() {
             const emailValid = validateEmail();
             const nameValid = validateName();
             const messageValid = validateMessage();
+            const recaptchaValid = validateRecaptcha();
             
-            if (emailValid && nameValid && messageValid) {
+            if (emailValid && nameValid && messageValid && recaptchaValid) {
                 // バリデーション成功時の処理
                 showSuccessMessage();
             } else {
@@ -112,10 +114,11 @@ function initFormValidation() {
         });
     }
     
-    // メールアドレスのバリデーション
+    // メールアドレスのバリデーション（ダミーメール対応）
     function validateEmail() {
         const email = emailInput.value.trim();
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // test@test なども許可する緩いバリデーション
+        const emailRegex = /^[^\s@]+@[^\s@]+$/;
         
         // 空の場合
         if (!email) {
@@ -198,6 +201,19 @@ function initFormValidation() {
         return true;
     }
     
+    // reCAPTCHAのバリデーション
+    function validateRecaptcha() {
+        const recaptchaResponse = grecaptcha.getResponse();
+        
+        if (!recaptchaResponse) {
+            showError(recaptchaError, '認証を完了してください。');
+            return false;
+        }
+        
+        hideError(recaptchaError);
+        return true;
+    }
+    
     // エラー表示
     function showError(errorElement, message) {
         errorElement.textContent = message;
@@ -262,6 +278,12 @@ function initFormValidation() {
         hideError(emailError);
         hideError(nameError);
         hideError(messageError);
+        hideError(recaptchaError);
+        
+        // reCAPTCHAをリセット
+        if (typeof grecaptcha !== 'undefined') {
+            grecaptcha.reset();
+        }
         
         // 成功メッセージにスクロール
         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });

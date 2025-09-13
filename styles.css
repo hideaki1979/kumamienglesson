@@ -279,6 +279,20 @@ main {
     margin-top: 0.5rem;
 }
 
+/* reCAPTCHA スタイル */
+.g-recaptcha {
+    margin: 1rem 0;
+}
+
+/* reCAPTCHAのレスポンシブ対応 */
+@media (max-width: 480px) {
+    .g-recaptcha {
+        transform: scale(0.77);
+        transform-origin: 0 0;
+        margin-left: -10px;
+    }
+}
+
 /* フッター */
 footer {
     background-color: #f8cce0;
