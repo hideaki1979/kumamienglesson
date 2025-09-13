@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ - 絶対あきらめない！大人の英語塾</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>絶対あきらめない！大人の英語塾</h1>
+            </div>
+            <nav id="navigation">
+                <ul>
+                    <li><a href="index.html">トップ</a></li>
+                    <li><a href="teacher.html">講師紹介</a></li>
+                    <li><a href="contact.html" class="active">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- お問い合わせフォームセクション -->
+            <section class="section">
+                <h3>お問い合わせフォーム</h3>
+                
+                <div class="form-note">
+                    <p><strong>お試しレッスン希望の場合はその旨をご記入ください。</strong><br>
+                    お気軽にご質問やご相談をお聞かせください。24時間以内にご返信いたします。</p>
+                </div>
+
+                <form id="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="email">
+                            メールアドレス <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            placeholder="example@email.com"
+                        >
+                        <div class="error" id="email-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">
+                            お名前 <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required 
+                            placeholder="山田 太郎"
+                        >
+                        <div class="error" id="name-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">
+                            本文 <span class="required">*</span>
+                        </label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            required 
+                            placeholder="お問い合わせ内容をご記入ください。お試しレッスンご希望の場合は、ご希望の日時や英語学習の目標なども併せてお聞かせください。"
+                            rows="6"
+                        ></textarea>
+                        <div class="error" id="message-error"></div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button type="submit" class="btn btn-primary">
+                            送信する
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- よくある質問セクション -->
+            <section class="section">
+                <h3>よくある質問</h3>
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div style="background-color: #fff; padding: 1.5rem; border-radius: 15px; border-left: 5px solid #f8cce0;">
+                        <h4 style="color: #333; margin-bottom: 0.5rem;">Q: 英語が全く話せませんが大丈夫ですか？</h4>
+                        <p style="color: #666;">A: もちろん大丈夫です！初心者の方も大歓迎です。お一人お一人のレベルに合わせてレッスンを進めますので、ご安心ください。</p>
+                    </div>
+                    
+                    <div style="background-color: #fff; padding: 1.5rem; border-radius: 15px; border-left: 5px solid #f8cce0;">
+                        <h4 style="color: #333; margin-bottom: 0.5rem;">Q: 忙しくてレッスンの時間が取れるか心配です。</h4>
+                        <p style="color: #666;">A: ご都合に合わせて柔軟にスケジュール調整いたします。夜間や週末のレッスンも可能です。まずはご相談ください。</p>
+                    </div>
+                    
+                    <div style="background-color: #fff; padding: 1.5rem; border-radius: 15px; border-left: 5px solid #f8cce0;">
+                        <h4 style="color: #333; margin-bottom: 0.5rem;">Q: お試しレッスンはどのような内容ですか？</h4>
+                        <p style="color: #666;">A: 現在の英語レベルの確認と、英語学習の目標をお聞きして、今後の学習プランをご提案します。約30分程度で、完全無料です。</p>
+                    </div>
+                    
+                    <div style="background-color: #fff; padding: 1.5rem; border-radius: 15px; border-left: 5px solid #f8cce0;">
+                        <h4 style="color: #333; margin-bottom: 0.5rem;">Q: オンラインレッスンはありますか？</h4>
+                        <p style="color: #666;">A: はい、オンラインレッスンにも対応しています。ご自宅から気軽に受講いただけます。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 連絡先情報セクション -->
+            <section class="section" style="text-align: center; background: linear-gradient(135deg, #f8cce0 0%, #fde8f0 100%);">
+                <h3>お気軽にお問い合わせください</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                    ご質問やご相談がございましたら、上記フォームからお気軽にお問い合わせください。<br>
+                    あなたの英語学習の第一歩をサポートいたします。
+                </p>
+                <div style="background-color: rgba(255,255,255,0.8); padding: 1.5rem; border-radius: 10px; display: inline-block;">
+                    <p><strong>営業時間：</strong> 月〜金 9:00-21:00 / 土日 10:00-18:00</p>
+                    <p><strong>メール返信：</strong> 24時間以内にご返信いたします</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 絶対あきらめない！大人の英語塾. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
